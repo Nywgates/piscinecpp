@@ -6,7 +6,7 @@
 #    By: laballea <laballea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 15:19:20 by laballea          #+#    #+#              #
-#    Updated: 2020/09/16 10:45:11 by laballea         ###   ########.fr        #
+#    Updated: 2021/01/20 16:21:25 by laballea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,10 @@ FT = megaphone.cpp
 
 NAME = megaphone
 
-all:
+${NAME}:
 	${CC} ${CFLAGS} ${FT} -o ${NAME}
+
+all: ${NAME}
 
 fclean:
 		rm -rf ${NAME}
