@@ -6,7 +6,7 @@
 /*   By: laballea <laballea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 09:06:39 by laballea          #+#    #+#             */
-/*   Updated: 2021/01/26 09:55:19 by laballea         ###   ########.fr       */
+/*   Updated: 2021/01/26 10:10:08 by laballea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void Character::equip(AWeapon *weapon){
 void Character::attack(Enemy *enemy){
 	std::cout << _name << " attacks " <<
 	enemy->getType() << " with a " << _weapon->getName() << " !" <<std::endl;
+	setAP(_AP - _weapon->getAPCost());
 	if (_weapon) {
 		_weapon->attack();
 		enemy->takeDamage(_weapon->getDamage());
